@@ -1,23 +1,23 @@
-import mongoose, { Document, Schema, Model, model } from 'mongoose';
+import mongoose, { Document, Schema, Model, model } from "mongoose";
 
 // Define the schema
-interface IData extends Document {
+interface IUser extends Document {
   name: string;
   age: number;
 }
 
-const dataSchema: Schema<IData> = new Schema<IData>({
+const dataSchema: Schema<IUser> = new Schema<IUser>({
   name: {
     required: true,
-    type: String
+    type: String,
   },
   age: {
     required: true,
-    type: Number
-  }
+    type: Number,
+  },
 });
 
 // Define the model
-const Data: Model<IData> = model<IData>('Data', dataSchema);
+const Data: Model<IUser> = model<IUser>("User", dataSchema);
 
 export default Data;
